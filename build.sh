@@ -87,3 +87,8 @@ sudo umount -d ${mount_point}
 echo "Deleting mount point"
 rm -rf ${mount_point}
 
+echo "Rename image file"
+mv ${source_img_name}.img ${target_img_name}.img
+echo "Compressing CoreELEC image"
+gzip ${target_img_name}.img
+sha256sum ${target_img_name}.img.gz > ${target_img_name}.img.gz.sha256
