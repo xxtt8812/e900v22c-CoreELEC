@@ -88,7 +88,7 @@ echo "Deleting mount point"
 rm -rf ${mount_point}
 
 echo "Rename image file"
-mv ${source_img_name}.img ${target_img_name}.img
+mv ${source_img_name}.img ${target_img_name}.img /opt/images/
 echo "Compressing CoreELEC image"
 gzip ${target_img_name}.img
 sha256sum ${target_img_name}.img.gz > ${target_img_name}.img.gz.sha256
