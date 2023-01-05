@@ -1,8 +1,8 @@
 #! /bin/sh
-version="19.4.1"
-source_img_name="CoreELEC-Amlogic-ng.arm-${version}.tar"
-source_img_file="${source_img_name}.tar"
-source_img_url="https://github.com/RuralHunter/CoreELEC/releases/download/${version}/${source_img_name}.tar"
+version="19.5-Matrix"
+source_img_name="CoreELEC-Amlogic-ng.arm-${version}-Generic"
+source_img_file="${source_img_name}.img.gz"
+source_img_url="https://github.com/CoreELEC/CoreELEC/releases/download/${version}/${source_img_name}.img.gz"
 target_img_prefix="CoreELEC-Amlogic-ng.arm-${version}"
 target_img_name="${target_img_prefix}-E900V22C-$(date +%Y.%m.%d)"
 mount_point="target"
@@ -92,3 +92,4 @@ mv ${source_img_name}.img ${target_img_name}.img
 echo "Compressing CoreELEC image"
 gzip ${target_img_name}.img
 sha256sum ${target_img_name}.img.gz > ${target_img_name}.img.gz.sha256
+
