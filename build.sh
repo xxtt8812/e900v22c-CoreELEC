@@ -47,14 +47,6 @@ sudo cp ${common_files}/fs-resize ${libreelec_path}/fs-resize
 sudo chown root:root ${libreelec_path}/fs-resize
 sudo chmod 0775 ${libreelec_path}/fs-resize
 
-echo "Copying rc_keymap files"
-sudo cp ${common_files}/rc_maps.cfg ${config_path}/rc_maps.cfg
-sudo chown root:root ${config_path}/rc_maps.cfg
-sudo chmod 0664 ${config_path}/rc_maps.cfg
-sudo cp ${common_files}/e900v22c.rc_keymap ${config_path}/rc_keymaps/e900v22c
-sudo chown root:root ${config_path}/rc_keymaps/e900v22c
-sudo chmod 0664 ${config_path}/rc_keymaps/e900v22c
-
 echo "Compressing SYSTEM image"
 sudo mksquashfs ${system_root} SYSTEM -comp lzo -Xalgorithm lzo1x_999 -Xcompression-level 9 -b 524288 -no-xattrs
 echo "Replacing SYSTEM image"
